@@ -9,12 +9,24 @@
   <b>Image to instant website. Generate, publish, and share with a QR code.</b>
 </p>
 
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=PasanSWijekoon.InstaWeb-QR)
-[![GitHub Repo stars](https://img.shields.io/github/stars/PasanSWijekoon/InstaWeb-QR?style=social)](https://github.com/PasanSWijekoon/InstaWeb-QR/stargazers)
-[![GitHub Code License](https://img.shields.io/github/license/PasanSWijekoon/InstaWeb-QR)](LICENSE)
-[![GitHub last commit](https://img.shields.io/github/last-commit/PasanSWijekoon/InstaWeb-QR)](https://github.com/PasanSWijekoon/InstaWeb-QR/commits/master)
-[![GitHub pull request](https://img.shields.io/badge/PRs-welcome-blue)](https://github.com/PasanSWijekoon/InstaWeb-QR/pulls)
-[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](CONTRIBUTING.md)
+<div align="center">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=PasanSWijekoon.InstaWeb-QR" alt="visitors"/>
+  <a href="https://github.com/PasanSWijekoon/InstaWeb-QR/stargazers">
+    <img src="https://img.shields.io/github/stars/PasanSWijekoon/InstaWeb-QR?style=social" alt="GitHub Repo stars"/>
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/github/license/PasanSWijekoon/InstaWeb-QR" alt="GitHub Code License"/>
+  </a>
+  <a href="https://github.com/PasanSWijekoon/InstaWeb-QR/commits/master">
+    <img src="https://img.shields.io/github/last-commit/PasanSWijekoon/InstaWeb-QR" alt="GitHub last commit"/>
+  </a>
+  <a href="https://github.com/PasanSWijekoon/InstaWeb-QR/pulls">
+    <img src="https://img.shields.io/badge/PRs-welcome-blue" alt="GitHub pull request"/>
+  </a>
+  <a href="CONTRIBUTING.md">
+    <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg" alt="Contributions Welcome"/>
+  </a>
+</div>
 
 
 

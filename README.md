@@ -1,14 +1,16 @@
 # InstaWeb QR
 
+
+<p align="center">
+  <img src="/public/favicon.png" alt="InstaWeb QR Logo" width="120"/>
+</p>
+<div align="center">
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=PasanSWijekoon.InstaWeb-QR)
 [![GitHub Repo stars](https://img.shields.io/github/stars/PasanSWijekoon/InstaWeb-QR?style=social)](https://github.com/PasanSWijekoon/InstaWeb-QR/stargazers)
 [![GitHub Code License](https://img.shields.io/github/license/PasanSWijekoon/InstaWeb-QR)](LICENSE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/PasanSWijekoon/InstaWeb-QR)](https://github.com/PasanSWijekoon/InstaWeb-QR/commits/master)
 [![GitHub pull request](https://img.shields.io/badge/PRs-welcome-blue)](https://github.com/PasanSWijekoon/InstaWeb-QR/pulls)
-
-<p align="center">
-  <img src="/public/favicon.png" alt="InstaWeb QR Logo" width="120"/>
-</p>
+</div>
 
 <p align="center">
   <b>Image to instant website. Generate, publish, and share with a QR code.</b>

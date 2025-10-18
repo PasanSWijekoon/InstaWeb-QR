@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaWeb QR - Image to QR Code</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@^0.12.0"
+        }
+      }
+    </script>
+    <script type="module" src="index.tsx"></script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="app">
+        <aside id="controls">
+            <header>
+                <h1>InstaWeb QR</h1>
+                <p>Image to instant website. Generate, publish, and share with a QR code.</p>
+            </header>
+            <main>
+                <div class="step">
+                    <h2>1. Upload an Image</h2>
+                    <label for="image-upload" id="drop-zone">
+                        <img id="image-preview" src="#" alt="Image preview" class="hidden" />
+                        <div id="upload-prompt">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+                            <span>Drag & drop or click to upload</span>
+                        </div>
+                    </label>
+                    <input type="file" id="image-upload" accept="image/*" hidden>
+                </div>
+
+                <div class="step">
+                    <h2>2. Add a Logo (Optional)</h2>
+                    <p class="description">Upload your logo to a service like <a href="https://imgur.com/upload" target="_blank">Imgur</a> and paste the direct image link below.</p>
+                    <input type="text" id="logo-url-prompt" class="text-input" placeholder="e.g., https://i.imgur.com/your-logo.png">
+                </div>
+
+                <div class="step">
+                    <button id="generate-btn" disabled>Generate Website</button>
+                </div>
+
+                <div class="step hidden" id="edit-section">
+                    <h2>3. Refine with AI</h2>
+                    <div id="chat-container">
+                         <input type="text" id="edit-prompt" class="text-input" placeholder="e.g., Change the title text to 'My Portfolio'">
+                         <button id="refine-btn">Refine</button>
+                    </div>
+                </div>
+
+                <div class="step hidden" id="publish-section">
+                    <h2>4. Publish & Share</h2>
+                    <p class="description">
+                        Your connected GitHub account will be used to create a new public repository and publish your site with GitHub Pages.
+                    </p>
+                    <div class="input-group">
+                        <input type="text" id="repo-name" class="text-input" placeholder="New Repository Name">
+                    </div>
+
+                    <div id="publish-result" class="hidden">
+                        <h3>Success!</h3>
+                        <p>Your website is live. It may take a minute to become available.</p>
+                        <div class="links">
+                            <a id="repo-link" href="#" target="_blank">View Repository</a>
+                            <a id="live-site-link" href="#" target="_blank">View Live Site</a>
+                        </div>
+                        <div id="qr-code-container">
+                            <img id="qr-code-img" src="" alt="QR Code for live website">
+                            <button id="download-qr-btn">Download QR</button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+            <footer>
+                <div id="actions-footer" class="hidden">
+                     <button id="download-btn">Download HTML</button>
+                     <button id="publish-btn">Publish to GitHub</button>
+                </div>
+            </footer>
+        </aside>
+        <section id="preview">
+            <div id="loader" class="hidden">
+                <div class="spinner"></div>
+                <p>Weaving your website...</p>
+            </div>
+            <iframe id="preview-frame" title="Website Preview"></iframe>
+        </section>
+    </div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

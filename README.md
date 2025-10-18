@@ -1,5 +1,11 @@
 # InstaWeb QR
 
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=PasanSWijekoon.InstaWeb-QR)
+[![GitHub Repo stars](https://img.shields.io/github/stars/PasanSWijekoon/InstaWeb-QR?style=social)](https://github.com/PasanSWijekoon/InstaWeb-QR/stargazers)
+[![GitHub Code License](https://img.shields.io/github/license/PasanSWijekoon/InstaWeb-QR)](LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/PasanSWijekoon/InstaWeb-QR)](https://github.com/PasanSWijekoon/InstaWeb-QR/commits/master)
+[![GitHub pull request](https://img.shields.io/badge/PRs-welcome-blue)](https://github.com/PasanSWijekoon/InstaWeb-QR/pulls)
+
 <p align="center">
   <img src="/public/favicon.png" alt="InstaWeb QR Logo" width="120"/>
 </p>
@@ -7,8 +13,6 @@
 <p align="center">
   <b>Image to instant website. Generate, publish, and share with a QR code.</b>
 </p>
-
----
 
 Ever wanted to link your physical business card, flyer, or poster to a live website? InstaWeb QR makes it happen. Upload an image of your current business card, flyer, or even a simple sketch, and this tool uses AI to generate a matching single-page website. You can refine the site with text prompts, then publish it with one click. The final output is a live URL and a high-quality, printable QR code, ready to be added to your next batch of business cards or flyers, bridging the gap between your physical and digital presence.
 

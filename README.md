@@ -31,7 +31,7 @@
 
 
 
-Ever wanted to link your physical business card, flyer, or poster to a live website? InstaWeb QR makes it happen. Upload an image of your current business card, flyer, or even a simple sketch, and this tool uses AI to generate a matching single-page website. You can refine the site with text prompts, then publish it with one click. The final output is a live URL and a high-quality, printable QR code, ready to be added to your next batch of business cards or flyers, bridging the gap between your physical and digital presence.
+### Ever wanted to link your physical business card, flyer, or poster to a live website? InstaWeb QR makes it happen. Upload an image of your current business card, flyer, or even a simple sketch, and this tool uses AI to generate a matching single-page website. You can refine the site with text prompts, then publish it with one click. The final output is a live URL and a high-quality, printable QR code, ready to be added to your next batch of business cards or flyers, bridging the gap between your physical and digital presence.
 
 ## Features
 

@@ -79,12 +79,7 @@ const toastContainer = document.getElementById(
   "toast-container"
 ) as HTMLDivElement;
 
-// Helper functions
-const showLoader = (message: string) => {
-  loader.querySelector("p")!.textContent = message;
-  loader.classList.remove("hidden");
-};
-const hideLoader = () => loader.classList.add("hidden");
+ 
 
 const fileToBase64 = (
   file: File

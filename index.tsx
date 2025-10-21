@@ -4,6 +4,27 @@
  */
 import { GoogleGenAI, Chat } from "@google/genai";
 
+function showLoader(message = 'Processing image...') {
+  const loader = document.getElementById('loader');
+  const loaderText = loader?.querySelector('p');
+  if (loader) loader.classList.remove('hidden');
+  if (loaderText) loaderText.textContent = message;
+}
+
+function hideLoader() {
+  const loader = document.getElementById('loader');
+  if (loader) loader.classList.add('hidden');
+}
+
+function disableGenerateButton() {
+  const btn = document.getElementById('generate-btn') as HTMLButtonElement | null;
+  if (btn) btn.disabled = true;
+}
+function enableGenerateButton() {
+  const btn = document.getElementById('generate-btn') as HTMLButtonElement | null;
+  if (btn) btn.disabled = false;
+}
+
 // State variables
 let uploadedImage: { mimeType: string; data: string } | null = null;
 let currentHtml: string | null = null;
@@ -443,3 +464,37 @@ try {
     </div>`;
   console.error(error);
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const genBtn = document.getElementById('generate-btn') as HTMLButtonElement | null;
+  const previewFrame = document.getElementById('preview-frame') as HTMLIFrameElement | null;
+  const loader = document.getElementById('loader');
+
+  function startUIProcessing() {
+    if (genBtn) genBtn.disabled = true;
+    if (loader) loader.classList.remove('hidden');
+  }
+  function stopUIProcessing() {
+    if (genBtn) genBtn.disabled = false;
+    if (loader) loader.classList.add('hidden');
+  }
+
+  if (genBtn) {
+    genBtn.addEventListener('click', () => {
+      startUIProcessing();
+
+      const hideOnIframe = () => {
+        stopUIProcessing();
+        if (previewFrame) previewFrame.removeEventListener('load', hideOnIframe);
+      };
+
+      if (previewFrame) {
+        previewFrame.addEventListener('load', hideOnIframe);
+      }
+
+      // fallback safety
+      setTimeout(() => {
+        stopUIProcessing();
+      }, 15000);
+    });
+  }
+});

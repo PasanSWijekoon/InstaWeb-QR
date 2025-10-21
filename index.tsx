@@ -54,6 +54,9 @@ const qrCodeImg = document.getElementById("qr-code-img") as HTMLImageElement;
 const downloadQrBtn = document.getElementById(
   "download-qr-btn"
 ) as HTMLButtonElement;
+const toastContainer = document.getElementById(
+  "toast-container"
+) as HTMLDivElement;
 
 // Helper functions
 const showLoader = (message: string) => {
@@ -100,6 +103,30 @@ const parseHtmlFromResponse = (responseText: string): string => {
   return responseText;
 };
 
+const showToast = (
+  message: string,
+  type: "error" | "info" = "error",
+  duration: number = 3000
+) => {
+  const toast = document.createElement("div");
+  toast.classList.add("toast", type);
+  toast.innerText = message;
+  toastContainer.appendChild(toast);
+
+  // Trigger slide-in animation
+  setTimeout(() => {
+    toast.classList.add("show");
+  }, 100);
+
+  // Remove after duration
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => {
+      toast.remove();
+    }, 300); // Wait for transition to finish
+  }, duration);
+};
+
 // Main logic
 try {
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
@@ -131,7 +158,7 @@ try {
 
   generateBtn.addEventListener("click", async () => {
     if (!uploadedImage) {
-      alert("Please upload an image first.");
+      showToast("Please upload an image first.");
       return;
     }
 
@@ -180,7 +207,7 @@ try {
       });
     } catch (error) {
       console.error(error);
-      alert(
+      showToast(
         "Failed to generate website. Please check the console for details."
       );
     } finally {
@@ -192,11 +219,11 @@ try {
   refineBtn.addEventListener("click", async () => {
     const prompt = editPrompt.value.trim();
     if (!prompt) {
-      alert("Please enter a refinement prompt.");
+      showToast("Please enter a refinement prompt.");
       return;
     }
     if (!chat) {
-      alert("Please generate a website first.");
+      showToast("Please generate a website first.");
       return;
     }
 
@@ -214,7 +241,9 @@ try {
       editPrompt.value = ""; // Clear input
     } catch (error) {
       console.error(error);
-      alert("Failed to refine website. Please check the console for details.");
+      showToast(
+        "Failed to refine website. Please check the console for details."
+      );
     } finally {
       hideLoader();
       refineBtn.disabled = false;
@@ -231,7 +260,7 @@ try {
 
   downloadBtn.addEventListener("click", () => {
     if (!currentHtml) {
-      alert("No website to download.");
+      showToast("No website to download.");
       return;
     }
     const blob = new Blob([currentHtml], { type: "text/html;charset=utf-8" });
@@ -252,11 +281,11 @@ try {
     const token = process.env.GITHUB_TOKEN;
 
     if (!repo) {
-      alert("Please provide a name for the new repository.");
+      showToast("Please provide a name for the new repository.");
       return;
     }
     if (!currentHtml) {
-      alert("No website content to publish.");
+      showToast("No website content to publish.");
       return;
     }
     if (!token) {
@@ -411,14 +440,14 @@ try {
       URL.revokeObjectURL(url);
     } catch (error) {
       console.error("Failed to download QR code", error);
-      alert("Could not download the QR code.");
+      showToast("Could not download the QR code.");
     }
   });
 
   // File handling function
   const handleFile = async (file: File) => {
     if (!file.type.startsWith("image/")) {
-      alert("Please upload an image file.");
+      showToast("Please upload an image file.");
       return;
     }
 
@@ -430,7 +459,7 @@ try {
       generateBtn.disabled = false;
     } catch (error) {
       console.error("Error reading file:", error);
-      alert("Failed to read the image file.");
+      showToast("Failed to read the image file.");
     }
   };
 } catch (error) {
